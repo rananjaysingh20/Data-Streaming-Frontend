@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT5 Tick Stream</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📈 MT5 Tick Stream</h1>
+            <div class="connection-status">
+                <span id="status-indicator" class="status-dot"></span>
+                <span id="status-text">Initializing...</span>
+                <div class="connection-info">
+                    <small>Backend: http://127.0.0.1:8000</small>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="left-panel">
+                <div class="search-section">
+                    <h3>Search Currencies</h3>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search currencies (e.g., EUR, USD, GBP)">
+                        <button id="search-btn">Search</button>
+                    </div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+
+                <div class="selected-currencies">
+                    <h3>Selected Currencies</h3>
+                    <div id="selected-list" class="selected-list"></div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="tick-data">
+                    <h3>Live Tick Data</h3>
+                    <div id="tick-display" class="tick-display"></div>
+                </div>
+            </div>
+        </main>
+
+        <div class="connection-settings">
+            <div class="settings-row">
+                <label for="api-token">API Token:</label>
+                <input type="password" id="api-token" placeholder="Enter your API token">
+                <button id="connect-btn">Connect</button>
+                <button id="disconnect-btn" disabled>Disconnect</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
