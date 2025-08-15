@@ -5,7 +5,7 @@ class MT5TickStream {
         this.selectedCurrencies = new Set();
         this.tickData = new Map();
         this.apiToken = ''; // Empty token for development (matches backend default)
-        this.backendUrl = 'http://127.0.0.1:8000';
+        this.backendUrl = 'https://william-convenient-partner-chairman.trycloudflare.com';
         this.defaultCurrencies = ['EURUSD', 'GBPUSD', 'USDJPY', 'XAUUSD']; // Default currencies to monitor
         this.reconnectAttempts = 0;
         this.maxReconnectAttempts = 5;
@@ -175,7 +175,7 @@ class MT5TickStream {
         errorDiv.innerHTML = `
             <div style="background: #f8d7da; color: #721c24; padding: 12px; border-radius: 8px; margin: 16px 0; border: 1px solid #f5c6cb;">
                 <strong>Connection Error:</strong> ${message}
-                <br><small>Make sure the backend server is running on http://127.0.0.1:8000</small>
+                <br><small>Make sure the backend server is running on https://william-convenient-partner-chairman.trycloudflare.com</small>
             </div>
         `;
         
@@ -373,7 +373,7 @@ class MT5TickStream {
         // Send exactly the message format the backend expects
         this.ws.send(JSON.stringify({
             action: 'subscribe',
-            symbols: [symbol.upper ? symbol.upper() : symbol.toUpperCase()]
+            symbols: [symbol]
         }));
     }
 
